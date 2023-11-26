@@ -21,5 +21,6 @@ topology:
     
   links:
         - endpoints: ["vmx1:eth1",      "bridge:vmx1-eth1"]
+        - endpoints: ["vmx1:eth2",      "bridge:vmx1-eth2"]
         - endpoints: ["mikrotik1:eth1", "bridge:mikrotik1-eth1"]
         - endpoints: ["mikrotik2:eth1", "bridge:mikrotik2-eth1"]
