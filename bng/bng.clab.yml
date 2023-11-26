@@ -2,18 +2,19 @@ name: bng
 
 topology:
   defaults:
-    image: vrnetlab/vr-vmx:21.2R1.10
-    image: vrnetlab/vr-routeros:7.12
     cpu-set: 14,15,30,31
   nodes:
     vmx1:
       kind: juniper_vmx
+      image: vrnetlab/vr-vmx:21.2R1.10
       startup-config: vmx1.cfg
     mikrotik1:
       kind: mikrotik_ros
+      image: vrnetlab/vr-routeros:7.12
       startup-config: mikrotik1.cfg
     mikrotik2:
       kind: mikrotik_ros
+      image: vrnetlab/vr-routeros:7.12
       startup-config: mikrotik2.cfg
     bridge:
       kind: bridge
