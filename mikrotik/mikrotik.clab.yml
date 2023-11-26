@@ -7,9 +7,9 @@ topology:
     cpu-set: 13,29
   nodes:
     mikrotik1:
-      #startup-config: mikrotik1.cfg
+      startup-config: mikrotik1.cfg
     mikrotik2:
-      #startup-config: mikrotik2.cfg
+      startup-config: mikrotik2.cfg
 
   links:
         - endpoints: ["mikrotik1:eth1", "mikrotik2:eth1"]
