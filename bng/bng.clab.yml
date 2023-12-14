@@ -23,13 +23,18 @@ topology:
     freeradius:
       kind: linux
       image: freeradius/freeradius-server:latest
-    bridge:
-      kind: bridge
+      exec:
+      - apt update && export RUNLEVEL=1 && apt install nano
+      - apt install iproute2 && ip address add 192.168.1.2/24 dev eth1
+      - apt install mysql-server -y & sleep 30 && echo "killall -9 apt" && rm -rf /var/run/mysqld && mkdir /var/run/mysqld && chown mysql:mysql /var/run/mysqld
+      - service mysql restart
+#    bridge:
+#      kind: bridge
     
   links:
         - endpoints: ["vmx1:eth1",      "mikrotik2:eth1"]
         - endpoints: ["vmx1:eth2",      "freeradius:eth1"]
-  
+
 #        - endpoints: ["vmx1:eth1",      "bridge:vmx1-eth1"]
 #        - endpoints: ["vmx1:eth2",      "bridge:vmx1-eth2"]
 #        - endpoints: ["mikrotik1:eth1", "bridge:mikrotik1-eth1"]
