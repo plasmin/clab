@@ -24,7 +24,7 @@ topology:
       kind: linux
       image: ubuntu/freeradius-server:latest
       exec:
-       - service mysql start && radiusd -X &
+       - service mysql start && freeradius -X &
  #### Bridge-to-OSX ####
     bridge:
       kind: bridge
