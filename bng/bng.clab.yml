@@ -19,9 +19,8 @@ topology:
       kind: linux
       image: ubuntu/freeradius-server:latest
       exec:
-       - service mysql start && service freeradius start
        - ip address add 192.168.1.2/24 dev eth1
-
+       - sleep 10 && service mysql start && service freeradius start
   links:
         - endpoints: ["vmx1:eth1",      "mikrotik1:eth1"]
         - endpoints: ["vmx1:eth2",      "freeradius:eth1"]
