@@ -1,8 +1,8 @@
-name: mikrotik
+name: mikrotik-mikrotik
 
 topology:
   defaults:
-    image: vrnetlab/vr-routeros:7.12
+    image: vrnetlab/vr-routeros:7.15rc1
     kind: mikrotik_ros
     cpu-set: 13,29
   nodes:
