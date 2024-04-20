@@ -12,7 +12,7 @@ topology:
 #### PPPoE Client ####
     mikrotik1:
       kind: mikrotik_ros
-      image: vrnetlab/vr-routeros:7.13.5
+      image: vrnetlab/vr-routeros:7.15rc1
       startup-config: mikrotik1.cfg
  #### FreeRadius ####
     freeradius:
