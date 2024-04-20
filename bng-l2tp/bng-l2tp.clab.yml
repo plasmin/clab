@@ -13,7 +13,7 @@ topology:
     vmx2:
       kind: juniper_vmx
       image: vrnetlab/vr-vmx:21.2R1.10
-      startup-config: vmx2.cfg
+#      startup-config: vmx2.cfg
 #### PPPoE Client ####
     mikrotik1:
       kind: mikrotik_ros
