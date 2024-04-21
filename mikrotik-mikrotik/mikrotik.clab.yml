@@ -12,4 +12,5 @@ topology:
       startup-config: mikrotik2.cfg
 
   links:
-        - endpoints: ["mikrotik1:eth1", "mikrotik2:eth1"]
+        - endpoints: ["mikrotik1:eth1","mikrotik2:eth1"]
+        - endpoints: ["mikrotik1:eth2","mgmt-net:internet-mikrotik1-eth2"]
