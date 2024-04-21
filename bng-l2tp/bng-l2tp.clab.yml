@@ -29,5 +29,5 @@ topology:
   links:
         - endpoints: ["vmx1:eth1",      "vmx2:eth1"]
         - endpoints: ["vmx1:eth2",      "freeradius:eth1"]
-        - endpoints: ["vmx1:eth3",      "host:vmx-eth3"]
+        - endpoints: ["vmx1:eth3",      "mgmt-net:internet-vmx-eth3"]
         - endpoints: ["vmx2:eth2",      "mikrotik1:eth1"]
