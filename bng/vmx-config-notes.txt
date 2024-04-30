@@ -1,5 +1,5 @@
 vMX notes
-# AE
+#  AE (Does it actually work properly?)
 set chassis aggregated-devices ethernet device-count 1
 set interfaces ge-0/0/0 gigether-options 802.3ad ae0
 set interfaces ae0 mac 00:00:00:00:00:01
