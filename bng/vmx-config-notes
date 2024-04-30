@@ -1,0 +1,10 @@
+vMX notes
+# AE
+set chassis aggregated-devices ethernet device-count 1
+set interfaces ge-0/0/0 gigether-options 802.3ad ae0
+set interfaces ae0 mac 00:00:00:00:00:01
+set interfaces ae0 aggregated-ether-options link-speed 1g
+set interfaces ae0 aggregated-ether-options lacp active
+set interfaces ae0 aggregated-ether-options lacp periodic fast
+set interfaces ae0 aggregated-ether-options lacp system-id 00:01:02:03:04:05
+set interfaces ae0 aggregated-ether-options lacp force-up
