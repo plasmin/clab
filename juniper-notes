@@ -1,3 +1,6 @@
+https://supportportal.juniper.net/s/article/MX-Missing-bytes-in-the-output-of-monitor-traffic-interface
+https://supportportal.juniper.net/s/article/MX-How-to-capture-the-PADx-packets-coming-from-a-specific-VLAN
+
 protocol [offset number in the protocol field : number of byte(1,2 or 4)]
 VLAN tag packet
   user@R2> monitor traffic interface ae0.0 layer2-headers matching "ether[12:2] == 0x8100"
