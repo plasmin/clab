@@ -1,0 +1,60 @@
+protocol [offset number in the protocol field : number of byte(1,2 or 4)]
+VLAN tag packet
+  user@R2> monitor traffic interface ae0.0 layer2-headers matching "ether[12:2] == 0x8100"
+SVLAN tag ID is "1418", VLAN tag ID is "7"
+  user@R2> monitor traffic interface ge-2/2/0 no-resolve layer2-headers matching "ether[14:2] & 0x0fff == 0x58a && ether[18:2] & 0x0fff == 0x7"
+Source MAC address begins with "56:00".
+  user@R1> monitor traffic interface ge-0/0/1 layer2-headers matching "ether[6:2] == 0x5600"
+IP source address is 192.168.*.2 (3-octet is wildcard but other octets are exact match)
+  user@R2> monitor traffic interface ge-0/0/1 layer2-headers matching "ip[12:4] & 0xffff00ff == 0xc0a80002"
+
+
+packets sent/received by a host.
+
+    match an IP address
+    monitor traffic interface ge-0/0/x matching "host 10.130.38.94" no-resolve detail
+
+    match a network
+    monitor traffic interface ge-0/0/x matching "net 225.1.1.0/24" no-resolve detail
+
+    to match a port
+    monitor traffic interface ge-0/0/x matching "port 22"
+
+    to match tcp port 179
+    monitor traffic interface ge-0/0/x matching "tcp port 179"
+
+    to match UDP port 646
+    monitor traffic interface ge-0/0/x matching "udp port 646"
+
+    to match a protocol
+    monitor traffic interface ge-0/0/x matching arp
+
+    to increase the size of capture
+    monitor traffic interface ge-0/0/x matching arp size 1500
+
+    to save the capture to a file
+    monitor traffic interface ge-0/0/x matching arp write-file capture.pcap <-- write-file is a hidden command so type it for completion
+
+    matching "not tcp port 3128î and matching tcp port 23
+    monitor traffic interface ge-0/0/x matching "not tcp port 3128 and tcp port 23"
+
+    matching ISIS packets
+    monitor traffic interface xe-5/0/0.1 matching iso
+
+    matching mpls packets
+    monitor traffic interface xe-5/0/0.1 matching mpls
+
+    matching IPv6 packets
+    monitor traffic interface xe-5/0/0.1 matching ip6
+
+    matching packets sent to particular destination
+    monitor traffic interface xe-5/0/0.1 matching "dst host 224.0.0.5î
+
+    matching packets coming from particular source
+    monitor traffic interface xe-5/0/0.1 matching "src host 100.100.100.0î"
+
+    matching packets with src mac address
+    monitor traffic interface xe-5/0/0.1 matching "ether src b0:a8:6e:70:fb:39î
+
+    matching ICMPv6 packets
+    monitor traffic interface xe-5/0/0.1 matching icmp6
