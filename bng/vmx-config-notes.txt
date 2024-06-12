@@ -8,3 +8,24 @@ set interfaces ae0 aggregated-ether-options lacp active
 set interfaces ae0 aggregated-ether-options lacp periodic fast
 set interfaces ae0 aggregated-ether-options lacp system-id 00:01:02:03:04:05
 set interfaces ae0 aggregated-ether-options lacp force-up
+
+# Bridge (MX)
+set interfaces ae0 vlan-tagging
+set interfaces ae0 encapsulation extended-vlan-bridge
+set interfaces ae0 unit 200 vlan-id 200 
+
+set interfaces ae1 vlan-tagging
+set interfaces ae1 encapsulation extended-vlan-bridge
+set interfaces ae1 unit 10 vlan-id 10
+set interfaces ae1 unit 200 vlan-id 200 
+
+set interfaces ae2 vlan-tagging
+set interfaces ae2 encapsulation extended-vlan-bridge
+set interfaces ae2 unit 10 vlan-id 10
+
+set bridge-domains TEST-10 vlan-id 10
+set bridge-domains TEST-10 interface ae1.10
+set bridge-domains TEST-10 interface ae2.10
+set bridge-domains TEST-200 vlan-id 200
+set bridge-domains TEST-200 interface ae0.200
+set bridge-domains TEST-200 interface ae1.200
