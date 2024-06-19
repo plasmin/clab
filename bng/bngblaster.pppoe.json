@@ -1,0 +1,78 @@
+{
+    "interfaces": {
+        "access": [
+            {
+                "interface": "eth1",
+                "type": "pppoe",
+                "outer-vlan-min": 1000,
+                "outer-vlan-max": 1999,
+                "inner-vlan-min": 1,
+                "inner-vlan-max": 4049,
+                "authentication-protocol": "PAP"
+            },
+            {
+                "interface": "eth1",
+                "type": "pppoe",
+                "outer-vlan-min": 2000,
+                "outer-vlan-max": 2999,
+                "inner-vlan-min": 1,
+                "inner-vlan-max": 4049,
+                "authentication-protocol": "PAP"
+            }
+        ]
+    },
+    "sessions": {
+        "count": 10000,
+        "max-outstanding": 100,
+        "start-rate": 100,
+        "stop-rate": 100
+    },
+    "pppoe": {
+        "reconnect": true,
+        "discovery-timeout": 3,
+        "discovery-retry": 10
+    },
+    "ppp": {
+        "mru": 1492,
+        "authentication": {
+            "username": "user{session-global}@rtbrick.com",
+            "password": "test",
+            "timeout": 5,
+            "retry": 30
+        },
+        "lcp": {
+            "conf-request-timeout": 1,
+            "conf-request-retry": 10,
+            "keepalive-interval": 30,
+            "keepalive-retry": 3
+        },
+        "ipcp": {
+            "enable": true,
+            "request-ip": true,
+            "request-dns1": true,
+            "request-dns2": true,
+            "conf-request-timeout": 1,
+            "conf-request-retry": 10
+        },
+        "ip6cp": {
+            "enable": true,
+            "conf-request-timeout": 1,
+            "conf-request-retry": 10
+        }
+    },
+    "dhcpv6": {
+        "enable": true,
+        "rapid-commit": true
+    },
+    "access-line": {
+        "agent-remote-id": "DEU.RTBRICK.{session-global}",
+        "agent-circuit-id": "0.0.0.0/0.0.0.0 eth {outer-vlan}:{inner-vlan}",
+        "rate-up": 1024,
+        "rate-down": 16384
+    },
+    "session-traffic": {
+        "ipv4-pps": 1,
+        "ipv6-pps": 1,
+        "ipv6pd-pps": 1
+    }
+}
