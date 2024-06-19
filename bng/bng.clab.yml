@@ -4,7 +4,7 @@ topology:
   defaults:
     cpu-set: 14,15,30,31
   nodes:
- #### BNG ####
+#### BNG ####
     vmx1:
       kind: juniper_vmx
       image: vrnetlab/vr-vmx:21.2R1.10
@@ -18,7 +18,7 @@ topology:
       kind: mikrotik_ros
       image: vrnetlab/vr-routeros:7.15
       startup-config: mikrotik1.cfg
- #### FreeRadius ####
+#### FreeRadius ####
     freeradius:
       kind: linux
       image: ubuntu/freeradius-server:latest
@@ -28,7 +28,7 @@ topology:
        - service freeradius start
 
   links:
-        - endpoints: ["vmx1:eth1",      "mikrotik1:eth1"]
-        - endpoints: ["vmx1:eth2",      "bngblaster:eth1"]
-        - endpoints: ["vmx1:eth3",      "freeradius:eth1"]
-        - endpoints: ["vmx1:eth4",      "mgmt-net:internet-vmx-eth3"]
+        - endpoints: ["vmx1:eth1",  "mgmt-net:internet-vmx-eth3"]
+        - endpoints: ["vmx1:eth2",  "freeradius:eth1"]
+        - endpoints: ["vmx1:eth3",  "bngblaster:eth1"]
+        - endpoints: ["vmx1:eth4",  "mikrotik1:eth1"]
