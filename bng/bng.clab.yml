@@ -27,8 +27,8 @@ topology:
        - service mysql start
        - service freeradius start
 #### Internet ####
-    bridge:
-      kind: bridge-internet
+    bridge-internet:
+      kind: internet
 
   links:
         - endpoints: ["vmx1:eth1",  "bridge-internet:vmx1-eth1"]
