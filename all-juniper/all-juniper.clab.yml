@@ -1,0 +1,31 @@
+name: all-juniper
+
+topology:
+  defaults:
+#    cpu-set: 12,13,28,29
+  nodes:
+    vmx1:
+      kind: juniper_vmx
+      image: vrnetlab/vr-vmx:21.2R1.10
+#      startup-config: vmx1.cfg
+    vjr1:
+      kind: juniper_vjunosrouter
+      image: vrnetlab/vr-vjunosrouter:23.2R1.15
+#      startup-config: vjr1.cfg
+    vjs1:
+      kind: juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.2R1.14
+#      startup-config: vjs1.cfg
+    vje1:
+      kind: juniper_vjunosevolved
+      image: vrnetlab/vr-vjunosevolved:23.2R2.21-EVO
+#      startup-config: vje1.cfg
+#    vsrx1:
+#      kind: juniper_vsrx
+#      image: vrnetlab/vr-vsrx3
+#      startup-config: vsrx1.cfg
+
+  links:
+        - endpoints: ["vjs1:eth1", "vmx1:eth1"]
+        - endpoints: ["vjs1:eth2", "vjs1:eth1"]
+        - endpoints: ["vjs1:eth3", "vje1:eth1"]
