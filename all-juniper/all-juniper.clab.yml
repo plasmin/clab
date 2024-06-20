@@ -27,5 +27,5 @@ topology:
 
   links:
         - endpoints: ["vjs1:eth1", "vmx1:eth1"]
-        - endpoints: ["vjs1:eth2", "vjs1:eth1"]
+        - endpoints: ["vjs1:eth2", "vjr1:eth1"]
         - endpoints: ["vjs1:eth3", "vje1:eth1"]
