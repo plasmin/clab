@@ -26,9 +26,12 @@ topology:
        - ip address add 192.168.1.2/24 dev eth1
        - service mysql start
        - service freeradius start
+#### Internet ####
+    bridge:
+      kind: bridge-internet
 
   links:
-        - endpoints: ["vmx1:eth1",  "mgmt-net:internet-vmx-eth3"]
+        - endpoints: ["vmx1:eth1",  "bridge-internet:vmx1-eth1"]
         - endpoints: ["vmx1:eth2",  "freeradius:eth1"]
         - endpoints: ["vmx1:eth3",  "bngblaster:eth1"]
         - endpoints: ["vmx1:eth4",  "mikrotik1:eth1"]
