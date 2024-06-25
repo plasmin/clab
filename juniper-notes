@@ -11,7 +11,6 @@ Source MAC address begins with "56:00".
 IP source address is 192.168.*.2 (3-octet is wildcard but other octets are exact match)
   user@R2> monitor traffic interface ge-0/0/1 layer2-headers matching "ip[12:4] & 0xffff00ff == 0xc0a80002"
 
-
 packets sent/received by a host.
 
     match an IP address
@@ -20,22 +19,22 @@ packets sent/received by a host.
     match a network
     monitor traffic interface ge-0/0/x matching "net 225.1.1.0/24" no-resolve detail
 
-    to match a port
+    match a port
     monitor traffic interface ge-0/0/x matching "port 22"
 
-    to match tcp port 179
+    match tcp port 179
     monitor traffic interface ge-0/0/x matching "tcp port 179"
 
-    to match UDP port 646
+    match UDP port 646
     monitor traffic interface ge-0/0/x matching "udp port 646"
 
-    to match a protocol
+    match a protocol
     monitor traffic interface ge-0/0/x matching arp
 
-    to increase the size of capture
+    increase the size of capture
     monitor traffic interface ge-0/0/x matching arp size 1500
 
-    to save the capture to a file
+    save the capture to a file
     monitor traffic interface ge-0/0/x matching arp write-file capture.pcap <-- write-file is a hidden command so type it for completion
 
     matching "not tcp port 3128î and matching tcp port 23
@@ -61,3 +60,153 @@ packets sent/received by a host.
 
     matching ICMPv6 packets
     monitor traffic interface xe-5/0/0.1 matching icmp6
+============================= VXLAN RSI ================================
+show version | no-more
+show chassis hardware detail | no-more
+show chassis fpc detail | no-more
+show arp no-resolve | count | no-more
+show arp no-resolve expiration-time | no-more
+show arp state no-resolve | no-more
+show evpn database |count | no-more
+show evpn database | no-more
+show evpn database extensive | no-more
+show evpn instance extensive | no-more
+show evpn ip-prefix-database direction exported | no-more
+show evpn ip-prefix-database direction exported extensive | no-more
+show evpn ip-prefix-database direction imported | no-more
+show evpn ip-prefix-database direction imported extensive | no-more
+show evpn multicast-snooping next-hops | no-more
+show evpn multicast-snooping assisted-replication multihomed-peers | no-more
+show evpn multicast-snooping assisted-replication next-hops | no-more
+show evpn multicast-snooping assisted-replication replicators | no-more
+show evpn multicast-snooping nexthops detail | no-more
+show evpn multicast-snooping nexthops extensive | no-more
+show evpn mld-snooping proxy extensive | no-more
+show evpn mld-snooping database extensive | no-more
+show evpn igmp-snooping proxy extensive | no-more
+show evpn igmp-snooping database extensive | no-more
+show evpn ip-prefix-routes | no-more
+show evpn l3-context | no-more
+show evpn multicast-snooping status | no-more
+show evpn oism | no-more
+show ethernet-switching context-history | no-more
+show ethernet-switching evpn arp-statistics | no-more
+show ethernet-switching evpn arp-table | no-more
+show ethernet-switching evpn arp-table extensive | no-more
+show ethernet-switching evpn nd-statistics | no-more
+show ethernet-switching evpn nd-table | no-more
+show ethernet-switching evpn peer-gateway-macs | no-more
+show ethernet-switching flood | no-more
+show ethernet-switching flood extensive | no-more
+show ethernet-switching flood-group | no-more
+show ethernet-switching flood-group eamnh | no-more
+show ethernet-switching flood route all-ce-flood | no-more
+show ethernet-switching flood route all-ve-flood | no-more
+show ethernet-switching flood route bd-flood | no-more
+show ethernet-switching flood route re-flood | no-more
+show ethernet-switching global-information | no-more
+show ethernet-switching global-mac-count | no-more
+show ethernet-switching global-mac-ip-count | no-more
+show ethernet-switching instance | no-more
+show ethernet-switching interface | no-more
+show ethernet-switching interface extensive | no-more
+show ethernet-switching mac-learning-log | no-more
+show ethernet-switching mac-notification | no-more
+show ethernet-switching mac-ip-table | no-more
+show ethernet-switching mac-ip-table extensive | no-more
+show ethernet-switching mac-ip-table kernel | no-more
+show ethernet-switching mac-ip-table kernel extensive | no-more
+show ethernet-switching mac-ip-table count | no-more
+show ethernet-switching mac-learning-log | no-more
+show ethernet-switching mgrp-policy | no-more
+show ethernet-switching statistics | no-more
+show ethernet-switching table interface all | no-more
+show ethernet-switching table interface all extensive | no-more
+show ethernet-switching table summary | no-more
+show ethernet-switching table | no-more
+show ethernet-switching table count | no-more
+show ethernet-switching table extensive | no-more
+show ethernet-switching vxlan-tunnel-end-point ar-vlbnh | no-more
+show ethernet-switching vxlan-tunnel-end-point esi | no-more
+show ethernet-switching vxlan-tunnel-end-point mh-peers | no-more
+show ethernet-switching vxlan-tunnel-end-point remote | no-more
+show ethernet-switching vxlan-tunnel-end-point remote mac-table | no-more
+show ethernet-switching vxlan-tunnel-end-point remote summary | no-more
+show ethernet-switching vxlan-tunnel-end-point source | no-more
+show ethernet-switching vxlan-tunnel-end-point svlbnh detail | no-more
+show ethernet-switching group-based-policy tag-database | no-more
+show vlans extensive | no-more
+show bridge domain extensive | no-more
+show bridge evpn peer-gateway-macs | no-more
+show bridge flood extensive | no-more
+show bridge mac-table extensive | no-more
+show bridge mac-ip-table extensive | no-more
+show bridge mac-ip-table kernel | no-more
+show ethernet mac-ip-table extensive | no-more
+show ethernet mac-ip-table kernel | no-more
+show ethernet instance | no-more
+show ethernet interface | no-more
+show ethernet flood | no-more
+show ethernet flood extensive | no-more
+show ethernet vxlan esi | no-more
+show ethernet vxlan remote | no-more
+show ethernet vxlan svlbnh detail | no-more
+show l2-learning context-history | no-more
+show l2-learning global-information | no-more
+show l2-learning global-mac-count | no-more
+show l2-learning global-mac-ip-count | no-more
+show l2-learning interface extensive | no-more
+show l2-learning instance extensive | no-more
+show l2-learning interface debuginfo | no-more
+show l2-learning mgrp-policy | no-more
+show l2-learning flood-group eamnh | no-more
+show l2-learning mac-move-buffer | no-more
+show l2-learning mac-move-buffer active | no-more
+show l2-learning mac-move-buffer brief | no-more
+show l2-learning mac-move-buffer detail | no-more
+show l2-learning mac-move-buffer extensive | no-more
+show l2-learning vxlan-tunnel-end-point source | no-more
+show l2-learning vxlan-tunnel-end-point remote | no-more
+show l2-learning vxlan-tunnel-end-point esi | no-more
+show l2-learning vxlan esi | no-more
+show l2-learning vxlan remote | no-more
+show route summary | no-more
+show route | no-more
+show route forwarding-table all | no-more
+show route forwarding-table all extensive | no-more
+show route table inet.0 | no-more
+show krt table | no-more
+show krt indirect-next-hop | no-more
+show bfd session | no-more
+show bfd session summary | no-more
+show bfd session extensive | no-more
+show bgp summary | no-more
+show bgp neighbor | no-more
+show ospf neighbor | no-more
+show ospf neighbor extensive | no-more
+show ospf database | no-more
+show ospf database extensive | no-more
+show ospf route | no-more
+show ospf route extensive | no-more
+show pim neighbors | no-more
+show pim join | no-more
+show pim rps | no-more
+show pim statistics | no-more
+show pim interfaces | no-more
+show task summary | no-more
+show task io | no-more
+show task memory | no-more
+show task memory detail | no-more
+show task memory history | no-more
+show ddos-protection protocols statistics terse | no-more
+show ddos-protection protocols violations | no-more
+show igmp snooping evpn database | no-more
+show igmp snooping evpn membership | no-more
+show igmp snooping statistics | no-more
+show igmp group detail | no-more
+show igmp statistics | no-more
+show igmp snooping evpn proxy detail | no-more
+show igmp snooping evpn database detail | no-more
+show multicast snooping route extensive | no-more
+================================
+
