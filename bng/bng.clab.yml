@@ -13,6 +13,8 @@ topology:
     bngblaster:
       kind: linux
       image: ubuntu/bngblaster:latest
+      # exec:
+      # - bngblaster -b -C bngblaster.pppoe-traffic.json -S run.sock -I
 #### PPPoE Client ####
     mikrotik1:
       kind: mikrotik_ros
@@ -34,4 +36,5 @@ topology:
         - endpoints: ["vmx1:eth1",  "bridge-internet:vmx1-eth1"]
         - endpoints: ["vmx1:eth2",  "freeradius:eth1"]
         - endpoints: ["vmx1:eth3",  "bngblaster:eth1"]
-        - endpoints: ["vmx1:eth4",  "mikrotik1:eth1"]
+        - endpoints: ["vmx1:eth4",  "bngblaster:eth2"]
+        - endpoints: ["vmx1:eth5",  "mikrotik1:eth1"]
