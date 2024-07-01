@@ -13,7 +13,9 @@ topology:
     bngblaster:
       kind: linux
       image: ubuntu/bngblaster:latest
-      # exec:
+      exec:
+       - ip -6 addr flush eth1
+       - ip -6 addr flush eth2
       # - bngblaster -b -C bngblaster.pppoe-traffic.json -S run.sock -I
 #### PPPoE Client ####
     mikrotik1:
