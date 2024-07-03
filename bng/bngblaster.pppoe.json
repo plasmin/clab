@@ -1,31 +1,41 @@
 {
     "interfaces": {
+        "network": {
+            "interface": "eth1",
+            "address": "10.10.10.2/30",
+            "gateway": "10.10.10.1"
+        },
         "access": [
             {
-                "interface": "eth1",
+                "interface": "eth2",
                 "type": "pppoe",
                 "outer-vlan-min": 1000,
                 "outer-vlan-max": 1999,
                 "inner-vlan-min": 1,
                 "inner-vlan-max": 4049,
+                "stream-group-id": 1,
                 "authentication-protocol": "PAP"
             },
             {
-                "interface": "eth1",
+                "interface": "eth2",
                 "type": "pppoe",
                 "outer-vlan-min": 2000,
                 "outer-vlan-max": 2999,
                 "inner-vlan-min": 1,
                 "inner-vlan-max": 4049,
+                "stream-group-id": 1,
                 "authentication-protocol": "PAP"
             }
         ]
     },
     "sessions": {
-        "count": 10000,
+        "count": 1000,
         "max-outstanding": 100,
         "start-rate": 100,
         "stop-rate": 1000
+    },
+    "session-traffic": {
+        "ipv4-pps": 1
     },
     "pppoe": {
         "reconnect": true,
@@ -70,9 +80,35 @@
         "rate-up": 1024,
         "rate-down": 16384
     },
-    "session-traffic": {
-        "ipv4-pps": 1,
-        "ipv6-pps": 1,
-        "ipv6pd-pps": 1
-    }
+    "streams": [
+        {
+            "name": "BestEffort",
+            "stream-group-id": 1,
+            "type": "ipv4",
+            "direction": "upstream",
+            "length": 1400,
+            "pps": 10000,
+            "destination-ipv4-address": "10.10.10.2"
+        },
+        {
+            "name": "Voice",
+            "stream-group-id": 1,
+            "type": "ipv4",
+            "direction": "upstream",
+            "length": 100,
+            "priority": 128,
+            "vlan-priority": 2,
+            "pps": 10,
+            "destination-ipv4-address": "10.10.10.2"
+        },
+        {
+            "name": "BestEffort",
+            "stream-group-id": 2,
+            "type": "ipv4",
+            "length": 100,
+            "pps": 10,
+            "direction": "upstream",
+            "destination-ipv4-address": "10.10.10.2"
+        }
+    ]
 }
