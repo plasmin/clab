@@ -9,7 +9,7 @@ topology:
       kind: juniper_vmx
       image: vrnetlab/vr-vmx:21.2R1.10
       startup-config: vmx1.cfg
-#### PPPoE Client ####
+#### PPPoE Client - BNG Blaster ####
     bngblaster:
       kind: linux
       image: ubuntu/bngblaster:latest
@@ -17,7 +17,7 @@ topology:
        - ip -6 addr flush eth1
        - ip -6 addr flush eth2
       # - bngblaster -b -C bngblaster.pppoe-traffic.json -S run.sock -I
-#### PPPoE Client ####
+#### PPPoE Client - Mikrotik ####
     mikrotik1:
       kind: mikrotik_ros
       image: vrnetlab/vr-routeros:7.15
