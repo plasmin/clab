@@ -1,0 +1,56 @@
+{
+    "interfaces": {
+        "network": {
+            "interface": "eth1",
+            "address": "10.10.10.2/30",
+            "gateway": "10.10.10.1"
+        },
+        "access": [
+        {
+            "interface": "eth2",
+            "type": "pppoe",
+            "outer-vlan-min": 1001,
+            "outer-vlan-max": 2000,
+            "inner-vlan-min": 1,
+            "stream-group-id": 1
+        }
+      ]
+    },
+    "sessions": {
+        "count": 1000,
+        "max-outstanding": 100,
+        "start-rate": 100,
+        "stop-rate": 1000
+    },
+    "session-traffic": {
+        "ipv4-pps": 1
+    },
+    "access-line": {
+        "agent-remote-id": "DEU.RTBRICK.{session-global}",
+        "agent-circuit-id": "0.0.0.0/0.0.0.0 eth {outer-vlan}:{inner-vlan}",
+        "rate-up": 1024,
+        "rate-down": 16384
+    },
+    "streams": [
+        {
+            "name": "BestEffort",
+            "stream-group-id": 1,
+            "type": "ipv4",
+            "direction": "upstream",
+            "length": 1400,
+            "pps": 10000,
+            "destination-ipv4-address": "10.10.10.2"
+        },
+        {
+            "name": "Voice",
+            "stream-group-id": 1,
+            "type": "ipv4",
+            "direction": "upstream",
+            "length": 100,
+            "priority": 128,
+            "vlan-priority": 2,
+            "pps": 10,
+            "destination-ipv4-address": "10.10.10.2"
+        }
+    ]
+}
