@@ -37,7 +37,7 @@ packets sent/received by a host.
     save the capture to a file
     monitor traffic interface ge-0/0/x matching arp write-file capture.pcap <-- write-file is a hidden command so type it for completion
 
-    matching "not tcp port 3128î and matching tcp port 23
+    matching "not tcp port 3128 and matching tcp port 23
     monitor traffic interface ge-0/0/x matching "not tcp port 3128 and tcp port 23"
 
     matching ISIS packets
@@ -50,16 +50,30 @@ packets sent/received by a host.
     monitor traffic interface xe-5/0/0.1 matching ip6
 
     matching packets sent to particular destination
-    monitor traffic interface xe-5/0/0.1 matching "dst host 224.0.0.5î
+    monitor traffic interface xe-5/0/0.1 matching "dst host 224.0.0.5"
 
     matching packets coming from particular source
-    monitor traffic interface xe-5/0/0.1 matching "src host 100.100.100.0î"
+    monitor traffic interface xe-5/0/0.1 matching "src host 100.100.100.0"
 
     matching packets with src mac address
-    monitor traffic interface xe-5/0/0.1 matching "ether src b0:a8:6e:70:fb:39î
+    monitor traffic interface xe-5/0/0.1 matching "ether src b0:a8:6e:70:fb:39"
 
     matching ICMPv6 packets
     monitor traffic interface xe-5/0/0.1 matching icmp6
+
+============================= Debug ================================
+  
+  exception trace allows you to capture things like broken packets (checksum error)
+    start shell pfe network fpc1
+    show jnh 0 exceptions terse
+    debug jnh exceptions-trace 
+    debug jnh exceptions 111 discard
+    undebug jnh exceptions-trace
+    undebug jnh exceptions
+
+    https://supportportal.juniper.net/s/article/MX-L3-incomplete-drops-are-seen-for-bad-IPv6-pkt-len-packets
+    https://gist.github.com/ytti/2323b019152eca6e05718bccd855566e#file-jnh_exception_packet_trace-rb
+    https://www.juniper.net/documentation/en_US/day-one-books/DO_MX5G.pdf
 ============================= VXLAN RSI ================================
 show version | no-more
 show chassis hardware detail | no-more
