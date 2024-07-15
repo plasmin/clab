@@ -61,6 +61,8 @@ packets sent/received by a host.
     matching ICMPv6 packets
     monitor traffic interface xe-5/0/0.1 matching icmp6
 
+    Traffic Matching Command Syntax
+    https://www.juniper.net/assets/us/en/local/pdf/books/day-one-poster-monitor-command.pdf
 ============================= Debug ================================
 
   Check interface errors in detail
