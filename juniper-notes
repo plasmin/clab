@@ -62,7 +62,14 @@ packets sent/received by a host.
     monitor traffic interface xe-5/0/0.1 matching icmp6
 
 ============================= Debug ================================
-  
+
+  Check interface errors in detail
+    show interfaces xe-7/0/0 |match index: 
+      Interface index: 224
+    start shell pfe network fpc0
+    NPC7(ruuter vty)# show jnh ifd 224 stream
+
+  Log dropped packets
   exception trace allows you to capture things like broken packets (checksum error)
     start shell pfe network fpc1
     show jnh 0 exceptions terse
