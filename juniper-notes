@@ -67,7 +67,7 @@ packets sent/received by a host.
     start shell pfe network fpc1
     show jnh 0 exceptions terse
     debug jnh exceptions-trace 
-    debug jnh exceptions 111 discard
+    debug jnh exceptions ADD-VALUE-HERE discard
     undebug jnh exceptions-trace
     undebug jnh exceptions
 
