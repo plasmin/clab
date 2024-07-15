@@ -74,6 +74,13 @@ packets sent/received by a host.
     https://supportportal.juniper.net/s/article/MX-L3-incomplete-drops-are-seen-for-bad-IPv6-pkt-len-packets
     https://gist.github.com/ytti/2323b019152eca6e05718bccd855566e#file-jnh_exception_packet_trace-rb
     https://www.juniper.net/documentation/en_US/day-one-books/DO_MX5G.pdf
+
+============================= MX104 ================================
+
+  request pfe execute command "show filter" target fpc2      
+      error: command is not valid on the mx104
+  request pfe execute target afeb0 command "show filter"
+
 ============================= VXLAN RSI ================================
 show version | no-more
 show chassis hardware detail | no-more
