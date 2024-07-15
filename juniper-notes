@@ -68,6 +68,7 @@ packets sent/received by a host.
       Interface index: 224
     start shell pfe network fpc0
     NPC7(ruuter vty)# show jnh ifd 224 stream
+    show jnh 0 exceptions terse
 
   Log dropped packets
   exception trace allows you to capture things like broken packets (checksum error)
