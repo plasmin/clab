@@ -1,0 +1,42 @@
+name: vyos
+
+topology:
+  defaults:
+#    cpu-set: 14,15,30,31
+  nodes:
+#### BNG ####
+    vyos1:
+      kind: linux
+      image: vyos/vyos-build:equuleus
+#      cmd: /sbin/init
+#      binds:
+#        - /lib/modules:/lib/modules
+#        - vyos1/config:/opt/vyatta/etc/config
+#### PPPoE Client ####
+    bngblaster1:
+      kind: linux
+      image: ubuntu/bngblaster:latest
+#### PPPoE Client ####
+    mikrotik1:
+      kind: mikrotik_ros
+      image: vrnetlab/vr-routeros:7.15
+      startup-config: mikrotik1.cfg
+#### FreeRadius ####
+#    freeradius:
+#      kind: linux
+#      image: ubuntu/freeradius-server:latest
+#      exec:
+#       - ip address add 192.168.1.2/24 dev eth1
+#       - service mysql start
+#       - service freeradius start
+#### Internet ####
+#    bridge-internet:
+#      kind: bridge
+
+  links:
+        - endpoints: ["vyos1:eth1",  "bngblaster1:eth1"]
+        - endpoints: ["vyos1:eth2",  "bngblaster1:eth2"]
+        - endpoints: ["vyos1:eth3",  "mikrotik1:eth1"]
+#        - endpoints: ["vyos1:eth1",  "bridge-internet:vyos1-eth1"]
+#        - endpoints: ["vyos1:eth2",  "freeradius:eth1"]
+#        - endpoints: ["vyos1:eth3",  "mikrotik1:eth1"]
