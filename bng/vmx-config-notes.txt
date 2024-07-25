@@ -2,6 +2,7 @@ vMX notes
 #  AE (Does it actually work properly?)
 set chassis aggregated-devices ethernet device-count 1
 set interfaces ge-0/0/0 gigether-options 802.3ad ae0
+                  # NOT ether-options 802.3ad ae0
 set interfaces ae0 aggregated-ether-options lacp active
 set interfaces ae0 unit 0 family bridge interface-mode trunk
 set interfaces ae0 unit 0 family bridge vlan-id-list 1-409
