@@ -1,0 +1,80 @@
+{
+    "interfaces":{
+      "network": {
+        "interface": "eth1",
+        "address": "10.10.10.2/30",
+        "gateway": "10.10.10.1"
+      },
+      "access": [
+        {
+          "interface": "eth2",
+          "type": "pppoe",
+          "vlan-mode": "N:1",
+          "outer-vlan": 10,
+          "outer-vlan-min": 0,
+          "outer-vlan-max": 0,
+          "inner-vlan-min": 0,
+          "inner-vlan-max": 0,
+          "stream-group-id": 1
+        }
+      ],
+      "links": [
+        {
+          "interface": "eth1",
+          "rx-threads": 1,
+          "rx-cpuset": [0],
+          "tx-threads": 1,
+          "tx-cpuset": [1]
+        },
+        {
+          "interface": "eth2",
+          "rx-threads": 1,
+          "rx-cpuset": [29],
+          "tx-threads": 4,
+          "tx-cpuset": [14, 15, 30, 31]
+        }
+      ]
+    },
+    "sessions": {
+        "count": 100,
+        "max-outstanding": 1000,
+        "start-rate": 100,
+        "stop-rate": 1000
+    },
+    "pppoe": {
+        "reconnect": true,
+        "discovery-timeout": 1,
+        "discovery-retry": 2
+    },
+    "session-traffic": {
+        "ipv4-pps": 1
+    },
+    "access-line": {
+        "agent-remote-id": "DEU.RTBRICK.{session-global}",
+        "agent-circuit-id": "0.0.0.0/0.0.0.0 eth {outer-vlan}:{inner-vlan}",
+        "rate-up": 1024,
+        "rate-down": 16384
+    },
+    "streams": [
+        {
+            "name": "BestEffort",
+            "stream-group-id": 1,
+            "type": "ipv4",
+            "direction": "upstream",
+            "destination-ipv4-address": "10.10.10.2",
+            "length": 1400,
+            "pps": 100
+        },
+        {
+            "name": "Voice",
+            "stream-group-id": 1,
+            "type": "ipv4",
+            "direction": "upstream",
+            "length": 100,
+            "priority": 128,
+            "vlan-priority": 2,
+            "pps": 1,
+            "destination-ipv4-address": "10.10.10.2"
+        }
+    ]
+}
