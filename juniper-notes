@@ -63,6 +63,17 @@ packets sent/received by a host.
 
     Traffic Matching Command Syntax
     https://www.juniper.net/assets/us/en/local/pdf/books/day-one-poster-monitor-command.pdf
+============================= DDOS live trace ================================
+
+set system ddos-protection global flow-detection
+set system ddos-protection global flow-report-rate 100
+set system ddos-protection protocols pppoe padi flow-detection-mode automatic
+set system ddos-protection protocols pppoe padi flow-level-detection subscriber on
+set system ddos-protection protocols pppoe padi flow-level-detection logical-interface on
+set system ddos-protection protocols pppoe padi flow-level-detection physical-interface on
+
+show ddos-protection protocols pppoe culprit-flows
+
 ============================= Debug ================================
 
   Check interface errors in detail
