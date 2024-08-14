@@ -74,7 +74,7 @@ set system ddos-protection protocols pppoe padi flow-level-detection physical-in
 
 show ddos-protection protocols pppoe culprit-flows
 
-============================= Debug ================================
+============================= Interface error ================================
 
   Check interface errors in detail
     show interfaces xe-7/0/0 |match index: 
@@ -95,6 +95,15 @@ show ddos-protection protocols pppoe culprit-flows
     https://supportportal.juniper.net/s/article/MX-L3-incomplete-drops-are-seen-for-bad-IPv6-pkt-len-packets
     https://gist.github.com/ytti/2323b019152eca6e05718bccd855566e#file-jnh_exception_packet_trace-rb
     https://www.juniper.net/documentation/en_US/day-one-books/DO_MX5G.pdf
+
+============================= Port-mirror ================================
+
+set chassis fpc 0 port-mirror-instance TESTMIRROR
+set interfaces ae0 unit 1211 family inet filter input TESTMIRROR
+set firewall family inet filter TESTMIRROR term 1 then port-mirror-instance TESTMIRROR
+set firewall family inet filter TESTMIRROR term 1 then accept
+set forwarding-options port-mirroring instance TESTMIRROR input rate 1
+set forwarding-options port-mirroring instance TESTMIRROR family inet output interface xe-0/0/0.1 next-hop 192.168.0.1
 
 ============================= MX104 ================================
 
