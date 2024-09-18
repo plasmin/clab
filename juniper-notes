@@ -71,6 +71,9 @@ set system ddos-protection protocols pppoe padi flow-detection-mode automatic
 set system ddos-protection protocols pppoe padi flow-level-detection subscriber on
 set system ddos-protection protocols pppoe padi flow-level-detection logical-interface on
 set system ddos-protection protocols pppoe padi flow-level-detection physical-interface on
+# Lazy
+set system ddos-protection global flow-detection
+set system ddos-protection global flow-detection-mode on
 
 show ddos-protection protocols pppoe culprit-flows
 
