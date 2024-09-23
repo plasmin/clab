@@ -75,6 +75,7 @@ set system ddos-protection protocols pppoe padi flow-level-detection physical-in
 set system ddos-protection global flow-detection
 set system ddos-protection global flow-detection-mode on
 
+show ddos-protection protocols statistics terse
 show ddos-protection protocols pppoe culprit-flows
 
 ============================= Interface error ================================
