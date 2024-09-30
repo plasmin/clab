@@ -109,6 +109,14 @@ set firewall family inet filter TESTMIRROR term 1 then accept
 set forwarding-options port-mirroring instance TESTMIRROR input rate 1
 set forwarding-options port-mirroring instance TESTMIRROR family inet output interface xe-0/0/0.1 next-hop 192.168.0.1
 
+============================= Pcap ================================
+
+monitor traffic interface ae0 matching "src host 192.168.0.1"
+monitor traffic interface ae0.10 layer2-headers no-resolve write-file /var/tmp/test.pcap
+
+start shell user root
+rtsockmon -nrt | grep change
+dmesg | grep arp
 ============================= MX104 ================================
 
   request pfe execute command "show filter" target fpc2      
