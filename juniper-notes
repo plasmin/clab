@@ -117,6 +117,24 @@ monitor traffic interface ae0.10 layer2-headers no-resolve write-file /var/tmp/t
 start shell user root
 rtsockmon -nrt | grep change
 dmesg | grep arp
+
+============================= Flapping routes? ================================
+
+rtsockmon output is as follows:  
+> start shell
+% rtsockmon -t > /var/tmp/rtsockmon.txt
+(wait 1 minute)
+Press CTRL+C
+
+Then in a Unix-like OS which is not Junos OS, issue:
+% cat rtsockmon.txt | grep inet | grep add | grep route | cut -c 50- | awk '{print $1 " " $2}' | sort | uniq -c | rev |cut -b 7-| rev |sort
+
+The output will look something like this:
+3    10.51.11.66
+151  10.51.145.116
+2    10.51.147.28
+The first column will be the number of times the route was added. 
+The second column is the prefix. So in the above example, 10.51.145.116 flappe: 151 times during 1 minute! 
 ============================= MX104 ================================
 
   request pfe execute command "show filter" target fpc2      
