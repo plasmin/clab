@@ -132,21 +132,37 @@
         <mxCell id="TltHTOF5UY6wrQ0CbbNr-1" value="vlan10" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="EWJrujR4eEeGzNGpfqsX-22">
           <mxGeometry x="118.68" y="53.09" width="92.65" height="26.91" as="geometry" />
         </mxCell>
-        <mxCell id="EWJrujR4eEeGzNGpfqsX-38" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#66FF66;startArrow=oval;startFill=1;elbow=vertical;flowAnimation=1;endArrow=oval;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="EWJrujR4eEeGzNGpfqsX-22" source="EWJrujR4eEeGzNGpfqsX-35" target="TltHTOF5UY6wrQ0CbbNr-7" edge="1">
+        <mxCell id="EWJrujR4eEeGzNGpfqsX-38" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#66FF66;startArrow=oval;startFill=1;elbow=vertical;flowAnimation=1;endArrow=oval;endFill=1;entryX=0.295;entryY=1.012;entryDx=0;entryDy=0;entryPerimeter=0;" parent="EWJrujR4eEeGzNGpfqsX-22" target="TltHTOF5UY6wrQ0CbbNr-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="75" y="95" />
-              <mxPoint x="126" y="95" />
-              <mxPoint x="126" y="75" />
-              <mxPoint x="201" y="75" />
-              <mxPoint x="201" y="95" />
-              <mxPoint x="246" y="95" />
+              <mxPoint x="56" y="85" />
+              <mxPoint x="146" y="85" />
             </Array>
-            <mxPoint x="106" y="175" as="sourcePoint" />
+            <mxPoint x="56" y="240" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="EWJrujR4eEeGzNGpfqsX-39" value="&lt;div&gt;bridge port - ingress (PVID: tag untagged ingress)&lt;/div&gt;&lt;div&gt;bridge vlan - egress (vlan-ids: push single vlan-id)&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="EWJrujR4eEeGzNGpfqsX-22" vertex="1">
           <mxGeometry x="26" y="5" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TltHTOF5UY6wrQ0CbbNr-14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#66FF66;startArrow=oval;startFill=1;elbow=vertical;flowAnimation=1;endArrow=oval;endFill=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.844;exitY=0.012;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="EWJrujR4eEeGzNGpfqsX-22" source="TltHTOF5UY6wrQ0CbbNr-7" target="TltHTOF5UY6wrQ0CbbNr-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="266" y="85" />
+              <mxPoint x="188" y="85" />
+            </Array>
+            <mxPoint x="176" y="170" as="sourcePoint" />
+            <mxPoint x="251" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TltHTOF5UY6wrQ0CbbNr-15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#66FF66;startArrow=oval;startFill=1;elbow=vertical;flowAnimation=1;endArrow=oval;endFill=1;entryX=0.183;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.811;exitY=0.012;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="EWJrujR4eEeGzNGpfqsX-22" source="TltHTOF5UY6wrQ0CbbNr-6" target="TltHTOF5UY6wrQ0CbbNr-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="94" y="105" />
+              <mxPoint x="226" y="105" />
+            </Array>
+            <mxPoint x="86" y="240" as="sourcePoint" />
+            <mxPoint x="245" y="240" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
