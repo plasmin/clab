@@ -174,7 +174,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-56" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.juniper.net/documentation/us/en/software/junos/traffic-mgmt-qfx/images/g041252.gif;" parent="1" vertex="1">
-          <mxGeometry x="410" y="810" width="597" height="294" as="geometry" />
+          <mxGeometry x="20" y="890" width="597" height="294" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
