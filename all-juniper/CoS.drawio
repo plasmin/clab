@@ -53,7 +53,7 @@
           <mxGeometry x="49.91482999999998" y="4.070000000000007" width="23.689999999999998" height="20" as="geometry" />
         </mxCell>
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-24" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;recursiveResize=0;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="-100" y="430" width="850" height="460" as="geometry" />
+          <mxGeometry x="-100" y="430" width="850" height="523.75" as="geometry" />
         </mxCell>
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-25" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;connectable=0;" parent="E14LCJ5W_eXGmbQzY-kX-24" vertex="1">
           <mxGeometry width="850" height="460" as="geometry" />
@@ -231,6 +231,12 @@
             <mxPoint x="500" y="570" as="sourcePoint" />
             <mxPoint x="550" y="520" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ce7bkE0VHJTKqh5RO_aL-81" value="Fill 0%" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="E14LCJ5W_eXGmbQzY-kX-24">
+          <mxGeometry x="265" y="380" width="60" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="ce7bkE0VHJTKqh5RO_aL-82" value="&lt;div&gt;Fill 100%&lt;/div&gt;&lt;div&gt;Drop 100%&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="E14LCJ5W_eXGmbQzY-kX-24">
+          <mxGeometry x="479.01" y="390" width="60" height="23" as="geometry" />
         </mxCell>
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-32" value="" style="group;rounded=0;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="-77" y="348" width="60" height="40" as="geometry" />
