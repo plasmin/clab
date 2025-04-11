@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0" version="26.2.4">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" version="26.2.9">
   <diagram name="Page-1" id="kG5d2uivP7wJLAVlX3CE">
-    <mxGraphModel dx="1628" dy="810" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1404" dy="711" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-23" value="" style="group;movable=0;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=0;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="-100" y="110" width="870" height="320" as="geometry" />
+          <mxGeometry x="-100" y="110" width="890" height="390" as="geometry" />
         </mxCell>
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-21" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;" parent="E14LCJ5W_eXGmbQzY-kX-23" vertex="1">
           <mxGeometry width="850" height="320" as="geometry" />
@@ -60,6 +60,9 @@
         </mxCell>
         <mxCell id="ce7bkE0VHJTKqh5RO_aL-86" value="Drop" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=10;notch=0;" parent="E14LCJ5W_eXGmbQzY-kX-23" vertex="1">
           <mxGeometry x="710" y="190" width="160" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ce7bkE0VHJTKqh5RO_aL-18" value="&lt;div&gt;High&lt;/div&gt;&lt;div&gt;Prio&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="E14LCJ5W_eXGmbQzY-kX-23" vertex="1">
+          <mxGeometry x="860" y="300" width="30" height="90" as="geometry" />
         </mxCell>
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-24" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;recursiveResize=0;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="-100" y="430" width="850" height="523.75" as="geometry" />
@@ -251,13 +254,13 @@
         <mxCell id="ce7bkE0VHJTKqh5RO_aL-82" value="&lt;div&gt;Fill 100%&lt;/div&gt;&lt;div&gt;Drop 100%&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="E14LCJ5W_eXGmbQzY-kX-24" vertex="1">
           <mxGeometry x="479.01" y="390" width="60" height="23" as="geometry" />
         </mxCell>
-        <mxCell id="9Cvu3uH8e4-jwWgG8o9k-1" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;horizontal=0;" edge="1" parent="E14LCJ5W_eXGmbQzY-kX-24">
+        <mxCell id="9Cvu3uH8e4-jwWgG8o9k-1" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;horizontal=0;" parent="E14LCJ5W_eXGmbQzY-kX-24" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="99" y="120" as="sourcePoint" />
             <mxPoint x="100" y="360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="9Cvu3uH8e4-jwWgG8o9k-2" value="&lt;div&gt;Scheduler&lt;/div&gt;&lt;div&gt;order&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="9Cvu3uH8e4-jwWgG8o9k-1">
+        <mxCell id="9Cvu3uH8e4-jwWgG8o9k-2" value="&lt;div&gt;Scheduler&lt;/div&gt;&lt;div&gt;order&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="9Cvu3uH8e4-jwWgG8o9k-1" vertex="1" connectable="0">
           <mxGeometry x="-0.03" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -323,10 +326,7 @@
         <mxCell id="E14LCJ5W_eXGmbQzY-kX-56" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.juniper.net/documentation/us/en/software/junos/traffic-mgmt-qfx/images/g041252.gif;" parent="1" vertex="1">
           <mxGeometry x="30" y="920" width="597" height="294" as="geometry" />
         </mxCell>
-        <mxCell id="ce7bkE0VHJTKqh5RO_aL-18" value="Prio-High" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="760" y="400" width="30" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="ce7bkE0VHJTKqh5RO_aL-19" value="Prio-Low" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ce7bkE0VHJTKqh5RO_aL-19" value="&lt;div&gt;Low&lt;/div&gt;&lt;div&gt;Prio&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="790" y="410" width="30" height="90" as="geometry" />
         </mxCell>
       </root>
